@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IPL Predictor - Upload Matches CSV</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>IPL Predictor</h1>
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% endif %}
+      <form action="/run" method="post" enctype="multipart/form-data">
+        <div class="form-row">
+          <label for="file">Upload matches.csv (CSV):</label>
+          <input type="file" name="file" id="file" accept=".csv">
+        </div>
+        <div class="form-row">
+          <label>
+            <input type="checkbox" name="use_default"> Use repository's matches.csv if present
+          </label>
+        </div>
+        <div class="form-row">
+          <button type="submit">Run pipeline</button>
+        </div>
+      </form>
+      <div class="notes">
+        <p>After running, you'll see the pipeline output (confusion matrices and accuracy).</p>
+      </div>
+    </div>
+  </body>
+</html>

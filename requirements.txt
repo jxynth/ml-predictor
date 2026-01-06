@@ -1,0 +1,6 @@
+Flask>=2.0
+pandas
+scikit-learn
+xgboost
+numpy
+Werkzeug
